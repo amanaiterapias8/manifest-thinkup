@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+  background-color: #0A0E1A;
+}
+
+body {
+  height: 100%;
+  background-color: #0A0E1A;
+  color: #F0F0F5;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #0A0E1A;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #252840;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C5CBF;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Botones base */
+button {
+  font-family: inherit;
+  transition: opacity 0.15s, transform 0.1s;
+}
+button:active {
+  opacity: 0.85;
+  transform: scale(0.97);
+}
+
+/* Inputs base */
+input, textarea {
+  font-family: inherit;
+}
+input::placeholder, textarea::placeholder {
+  color: #5A5B70;
+}
+
+/* Selection */
+::selection {
+  background: #7C5CBF44;
+  color: #F0F0F5;
+}
+
+/* Mobile safe area */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  nav {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}
